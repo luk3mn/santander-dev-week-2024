@@ -7,5 +7,12 @@ public record Champion(
     String lore,
     String imageUrl
 ) {
-    
+    public String generateContextByQuestion(String question) {
+        return """
+                Question: %s
+                Champion Name: %s
+                Role: %s
+                Lore: %s
+                """.formatted(question,this.name, this.role, this.lore);
+    }
 }

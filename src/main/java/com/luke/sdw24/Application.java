@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.luke.sdw24.application.AskChampionUseCase;
 import com.luke.sdw24.application.ListChampionsUseCase;
 import com.luke.sdw24.domain.ports.ChampionsRepository;
 
@@ -17,6 +18,11 @@ public class Application {
 	@Bean
 	public ListChampionsUseCase provideListChampionsUseCase(ChampionsRepository repository) {
 		return new ListChampionsUseCase(repository);
+	}
+
+	@Bean
+	public AskChampionUseCase provideAskChampionUseCase(ChampionsRepository repository) {
+		return new AskChampionUseCase(repository);
 	}
 
 }

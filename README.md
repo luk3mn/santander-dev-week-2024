@@ -19,7 +19,7 @@
   <h3 align="center">LOL Champions API</h3>
   
   <p align="center">
-    Santander Dev Week 2024
+    Santander Dev Week 2024 Project by DIO to build app using Java, Cloud and AI in a game context
     <br />
     <a href="https://github.com/luk3mn/santander-dev-week-2024/README.md"><strong>Explore the docs »</strong></a>
     <br />
