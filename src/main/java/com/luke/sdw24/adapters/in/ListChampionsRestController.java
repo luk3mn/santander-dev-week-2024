@@ -2,6 +2,7 @@ package com.luke.sdw24.adapters.in;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/champions")
 public record ListChampionsRestController(ListChampionsUseCase useCase) {
 
+    @CrossOrigin // unsecure practice
     @GetMapping
     public List<Champion> findAllChampions() {
         return useCase.findAll();
