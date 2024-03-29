@@ -92,14 +92,14 @@ class Model,IPort entities;
 
 > Directory Structure
 -   `adapters/`: To include adapters to facilitate the communication between the application and external functions (it knows about the Spring)
-    -   `in/`: 
-    -   `out/`:
--   `application/`: 
--   `domain/`:
-    -   `exception/`:
-    -   `model/`: 
-    -   `ports/`:
--   `Application.java`:
+    -   `in/`: it include enter adapters, such as controllers REST, to deal with users request
+    -   `out/`: it include out adapters, it does the database interaction
+-   `application/`: Host application use case, wrapping essential business logic
+-   `domain/`: It is the application core, to use entities, exceptions and interfaces
+    -   `exception/`: to deal with personalized exceptions
+    -   `model/`: To model domain entity, reflecting the main application concept
+    -   `ports/`: Establishes the interfaces that outline contracts for external adapters and services.
+-   `Application.java`: The main class to configure and execute it.
 
 <p align="justify">
 
@@ -156,7 +156,8 @@ CREATE TABLE IF NOT EXISTS champions (
     lore TEXT,
     image_url VARCHAR(255)
 );
-
+```
+```sql
 INSERT INTO champions (name, role, lore, image_url) VALUES
     ('Jinx', 'Atirador', 'Uma criminosa impulsiva e maníaca de Zaun, Jinx vive para disseminar o caos sem se preocupar com as consequências. Com um arsenal de armas mortais, ela detona as explosões mais altas e mais luminosas para deixar um rastro de destruição e pânico por onde passa. Jinx abomina o tédio e deixa alegremente sua marca caótica de pandemônio aonde quer que vá.', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg'),
     ('Vi', 'Lutador', 'Antiga criminosa das ruas violentas de Zaun, Vi é uma mulher temível, impulsiva e explosiva que tem muito pouco respeito por autoridades. Após ter crescido completamente só, Vi desenvolveu instintos de sobrevivência extremamente certeiros e um senso de humor extremamente ácido. Agora trabalhando com os Vigias de Piltover para manter a paz, ela porta poderosas manoplas hextec capazes de esmagar paredes e suspeitos com a mesma facilidade.', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg'),
@@ -185,8 +186,8 @@ To deploy this project run
 ## Roadmap
 
 - [x] Project Init
-- [ ] Building an API with LOL champions
-- [ ] Improving the API with Artificial Intelligence
+- [x] Building an API with LOL champions
+- [x] Improving the API with Artificial Intelligence
 - [ ] Using HTML / CSS / Javascript to request LOL champions API
 
 <p align="right">(<a href="#santander-dev-week-2024">back to top</a>)</p>
